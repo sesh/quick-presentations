@@ -30,8 +30,9 @@ The Markdown files in this repository are presentations.
 
 Processed examples:
 
-- [Lighting TDD Introduction](https://sesh.github.com/quick-presentations/tdd-general.html)
-- [Estimation Challenge](https://sesh.github.com/quick-presentations/pragprog-challenges.html)
+- [This README](https://sesh.github.io/quick-presentations/README.html)
+- [Lighting TDD Introduction](https://sesh.github.io/quick-presentations/tdd-general.html)
+- [Estimation Challenge](https://sesh.github.io/quick-presentations/pragprog-challenges.html)
 
 ---
 
