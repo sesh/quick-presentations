@@ -8,6 +8,12 @@ Usage:
 pipenv run python bbig.py <markdown-file>
 ```
 
+Build all markdown files with:
+
+```
+pipenv run python bbig.py *.md
+```
+
 ---
 
 Under the hood this really just combines a bunch of smaller utilities:
@@ -22,14 +28,14 @@ Under the hood this really just combines a bunch of smaller utilities:
 
 The Markdown files in this repository are presentations.
 
-Processed example:
+Processed examples:
 
 - [Lighting TDD Introduction](https://sesh.github.com/quick-presentations/tdd-general.html)
 - [Estimation Challenge](https://sesh.github.com/quick-presentations/pragprog-challenges.html)
 
 ---
 
-Licences
+Licence
 
 - Code: MIT
 - Presentations: CC-BY-SA
