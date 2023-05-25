@@ -104,10 +104,10 @@ if __name__ == "__main__":
         html += "</body>\n"
         html += "</html>"
 
-        out = Path("out")
-        if not out.is_dir():
-            out.mkdir()
+        docs = Path("docs")
+        if not docs.is_dir():
+            docs.mkdir()
 
-        with open(out / slides_fn.replace(".md", ".html"), "w") as f:
-            print(f"Saving to {out / slides_fn.replace('.md', '.html')}...")
+        with open(docs / slides_fn.replace(".md", ".html"), "w") as f:
+            print(f"Saving to {docs / slides_fn.replace('.md', '.html')}...")
             f.write(html)

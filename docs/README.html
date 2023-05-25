@@ -1604,22 +1604,28 @@ addEventListener("load", () => {
 		</style>
 	</head>
 	<body>
-	    <div><p>Build quick presentations from markdown files.</p>
+	    <div><p>Build quick presentations from markdown files.</p></div>
+    <div><p>Usage:</p>
 <pre><code>pipenv run python bbig.py &lt;markdown-file&gt;
-</code></pre>
-<p>Under the hood this really just combines a bunch of smaller utilities:</p>
+</code></pre></div>
+    <div><p>Under the hood this really just combines a bunch of smaller utilities:</p>
 <ul>
 <li><a href="https://github.com/tmcw/big/">big</a> to power the presentation</li>
-<li><a href="">mistune</a> for Markdown parsing</li>
-<li><a href="">highlight.js</a> for syntax highlighting</li>
-<li><a href="">Twemoji</a> to ensure emoji are consistent and scalable</li>
+<li><a href="https://mistune.lepture.com/en/latest/">mistune</a> for Markdown parsing</li>
+<li><a href="https://highlightjs.org/">highlight.js</a> for syntax highlighting</li>
+<li><a href="https://twemoji.twitter.com/">Twemoji</a> to ensure emoji are consistent and scalable</li>
 <li><a href="https://github.com/sesh/thttp">thttp</a> as a lightweight HTTP client</li>
-</ul>
-<p>The Markdown files in this repository are presentations.</p>
+</ul></div>
+    <div><p>The Markdown files in this repository are presentations.</p>
 <p>Processed example:</p>
 <ul>
 <li><a href="https://sesh.github.com/quick-presentations/tdd-general.html">Lighting TDD Introduction</a></li>
 <li><a href="https://sesh.github.com/quick-presentations/pragprog-challenges.html">Estimation Challenge</a></li>
+</ul></div>
+    <div><p>Licences</p>
+<ul>
+<li>Code: MIT</li>
+<li>Presentations: CC-BY-SA</li>
 </ul></div>
 <script>hljs.initHighlightingOnLoad();twemoji.parse(document.body, {
 				folder: 'svg',
