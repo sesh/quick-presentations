@@ -16,7 +16,7 @@ pipenv run python bbig.py *.md
 
 ---
 
-Under the hood this really just combines a bunch of smaller utilities:
+Under the hood this really just combines a bunch of bigger utilities:
 
 - [big](https://github.com/tmcw/big/) to power the presentation
 - [mistune](https://mistune.lepture.com/en/latest/) for Markdown parsing
