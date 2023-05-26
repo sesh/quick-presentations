@@ -71,11 +71,6 @@ if __name__ == "__main__":
 
         html += """
 		<style>
-			body {
-				background-color: #ffd52e;
-				color: #000;
-			}
-
 			img.emoji {
 				height: 1em;
 				width: 1em;

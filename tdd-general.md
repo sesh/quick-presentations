@@ -242,3 +242,10 @@ Try using TDD on your next side project
 ---
 
 Thank you 🙏🏻
+
+<style>
+body {
+  background-color: #ffd52e;
+  color: #000;
+}
+</style>
