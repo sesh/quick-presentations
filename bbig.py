@@ -45,7 +45,7 @@ if __name__ == "__main__":
     slides_fns = args.get("[]")
 
     if not slides_fns:
-        print("Slide filesnames must be provided as arguments")
+        print("Slide filenames must be provided as arguments")
         sys.exit(1)
 
     for slides_fn in slides_fns:
