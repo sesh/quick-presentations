@@ -63,7 +63,6 @@ def parse_slides(slides_fn):
     with open(slides_fn) as f:
         text = f.read()
         slides = text.split("\n---\n")
-        print(slides)
         return slides
 
 
@@ -120,7 +119,6 @@ if __name__ == "__main__":
             body_class = ''
             if "<!-- body-class:" in slide:
                 body_class = slide.split("<!-- body-class:")[1].split('-->')[0].strip()
-                print(body_class)
 
             slide_html = f"    <div data-body-class='{body_class}'>" + mistune.html(slide).strip() + "</div>\n"
             html += slide_html
