@@ -1,7 +1,13 @@
 import sys
 import mistune
 import thttp
+import os
 from pathlib import Path
+import hashlib
+
+# TODO:
+# Single image of a slide gets wrapped with <p> and breaks layout
+# Image slide with footnote
 
 
 SCRIPTS = [
@@ -16,6 +22,27 @@ STYLES = [
     "https://raw.githubusercontent.com/tmcw/big/master/big.css",
     "https://raw.githubusercontent.com/tmcw/big/master/themes/light.css",
 ]
+
+
+def cached_get(url, enable_cache=True):
+    m = hashlib.sha256()
+    m.update(url.encode())
+    fn = m.hexdigest()
+
+    cache_dir = Path('.cache')
+    cache_dir.mkdir(exist_ok=True)
+    cached_file = cache_dir / fn
+
+    if enable_cache and cached_file.exists():
+        with open(cached_file, 'r') as f:
+            return f.read()
+    else:
+        content = thttp.request(url).content.decode()
+
+        with open(cached_file, 'w') as f:
+            f.write(content)
+
+        return content
 
 
 def parse_args(args):
@@ -36,6 +63,7 @@ def parse_slides(slides_fn):
     with open(slides_fn) as f:
         text = f.read()
         slides = text.split("\n---\n")
+        print(slides)
         return slides
 
 
@@ -62,11 +90,11 @@ if __name__ == "__main__":
 	"""
 
         for style_url in STYLES:
-            content = thttp.request(style_url).content.decode()
+            content = cached_get(style_url)
             html += f"<style>\n{content}</style>\n"
 
         for script_url in SCRIPTS:
-            content = thttp.request(script_url).content.decode()
+            content = cached_get(script_url)
             html += f"<script>\n{content}</script>\n"
 
         html += """
@@ -89,7 +117,12 @@ if __name__ == "__main__":
 	"""
 
         for slide in slides:
-            slide_html = "    <div>" + mistune.html(slide).strip() + "</div>\n"
+            body_class = ''
+            if "<!-- body-class:" in slide:
+                body_class = slide.split("<!-- body-class:")[1].split('-->')[0].strip()
+                print(body_class)
+
+            slide_html = f"    <div data-body-class='{body_class}'>" + mistune.html(slide).strip() + "</div>\n"
             html += slide_html
 
         html += """<script>hljs.initHighlightingOnLoad();twemoji.parse(document.body, {
@@ -100,9 +133,9 @@ if __name__ == "__main__":
         html += "</html>"
 
         docs = Path("docs")
-        if not docs.is_dir():
-            docs.mkdir()
+        out_fn = docs / slides_fn.replace(".md", ".html")
+        Path(os.path.dirname(out_fn)).mkdir(parents=True, exist_ok=True)
 
-        with open(docs / slides_fn.replace(".md", ".html"), "w") as f:
-            print(f"Saving to {docs / slides_fn.replace('.md', '.html')}...")
+        with open(out_fn, "w") as f:
+            print(f"Saving to {out_fn}...")
             f.write(html)
