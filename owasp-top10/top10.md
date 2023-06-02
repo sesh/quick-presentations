@@ -335,11 +335,10 @@ Think about security early, during the planning and design phase of new work
 
 Resources if you want to learn more
 
-- [OWASP](https://owasp.org/) ([Top 10](https://owasp.org/www-project-top-ten/), [Cheat Sheet Series](https://cheatsheetseries.owasp.org/), )
-- Pentester Labs Bootcamp
-- PicoCTF
-- Learn to Hack
-- Risky Business
+- [OWASP](https://owasp.org/) ([Top 10](https://owasp.org/www-project-top-ten/), [Cheat Sheet Series](https://cheatsheetseries.owasp.org/), [Testing Guide](https://owasp.org/www-project-web-security-testing-guide/stable/))
+- [Pentester Labs Bootcamp](https://www.pentesterlab.com/bootcamp)
+- [PicoCTF](https://www.picoctf.org/)
+- [Risky Business](https://risky.biz/)
 
 ---
 
