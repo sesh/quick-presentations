@@ -13,14 +13,14 @@ import hashlib
 SCRIPTS = [
     "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js",
     "https://unpkg.com/twemoji@latest/dist/twemoji.min.js",
-    "https://raw.githubusercontent.com/tmcw/big/master/big.js",
+    "https://raw.githubusercontent.com/sesh/big/master/big.js",
 ]
 
 STYLES = [
     "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css",
     "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/tokyo-night-dark.min.css",
-    "https://raw.githubusercontent.com/tmcw/big/master/big.css",
-    "https://raw.githubusercontent.com/tmcw/big/master/themes/light.css",
+    "https://raw.githubusercontent.com/sesh/big/master/big.css",
+    "https://raw.githubusercontent.com/sesh/big/master/themes/light.css",
 ]
 
 
