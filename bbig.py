@@ -66,6 +66,25 @@ def parse_slides(slides_fn):
         return slides
 
 
+def process_slide(slide):
+    # If the slide is wrapped in <div> then just return the slide
+    # the author knows better than us :)
+    if slide.strip().startswith('<div'):
+        return slide
+
+
+    body_class = ''
+    if "<!-- body-class:" in slide:
+        body_class = slide.split("<!-- body-class:")[1].split('-->')[0].strip()
+
+    body_style = ''
+    if "<!-- body-style:" in slide:
+        body_style = slide.split("<!-- body-style:")[1].split('-->')[0].strip()
+
+    slide_html = f"    <div data-body-class='{body_class}' data-body-style='{body_style}'>" + mistune.html(slide).strip() + "</div>\n"
+    return slide_html
+
+
 if __name__ == "__main__":
     args = parse_args(sys.argv[1:])
 
@@ -116,12 +135,7 @@ if __name__ == "__main__":
 	"""
 
         for slide in slides:
-            body_class = ''
-            if "<!-- body-class:" in slide:
-                body_class = slide.split("<!-- body-class:")[1].split('-->')[0].strip()
-
-            slide_html = f"    <div data-body-class='{body_class}'>" + mistune.html(slide).strip() + "</div>\n"
-            html += slide_html
+            html += process_slide(slide)
 
         html += """<script>hljs.initHighlightingOnLoad();twemoji.parse(document.body, {
 				folder: 'svg',

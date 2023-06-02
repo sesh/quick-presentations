@@ -1599,11 +1599,17 @@ addEventListener("load", () => {
 		</style>
 	</head>
 	<body>
-	    <div data-body-class=''><p>OWASP Top 10</p></div>
-    <div data-body-class=''><p>A regularly update list of the <em>most critical</em> security risks to web applications</p></div>
-    <div data-body-class=''><p>Open Web Application Security Project (OWASP) is a community-led security project.</p>
-<p>The team is made up of security experts from around the world.</p></div>
-    <div data-body-class=''><h1>The 2021 Top 10</h1>
+	    <div data-body-class='' data-body-style=''><p>OWASP Top 10</p></div>
+    <div data-body-class='' data-body-style=''><p>A regularly updated list of the <em>most critical</em> security risks to web applications</p>
+<div class="footnote">
+    https://owasp.org/www-project-top-ten/
+</div></div>
+    <div data-body-class='' data-body-style=''><p>Open Web Application Security Project (OWASP) is a community-led security project.</p>
+<p>The team is made up of security experts from around the world.</p>
+<div class="footnote">
+    https://owasp.org/
+</div></div>
+    <div data-body-class='' data-body-style=''><h1>The 2021 Top 10</h1>
 <ol>
 <li>Broken Access Control</li>
 <li>Cryptographic Failures</li>
@@ -1615,54 +1621,149 @@ addEventListener("load", () => {
 <li>Software and Data Integrity Failures</li>
 <li>Security Logging and Monitoring Failures</li>
 <li>Server-Side Request Forgery</li>
-</ol>
-<div class="footnotes">
-<p><a href="https://owasp.org/www-project-top-ten/">OWASP Top Ten</a></p>
-</div></div>
-    <div data-body-class='alt'><!-- body-class:alt -->
+</ol></div>
+    <div data-body-class='alt' data-body-style=''><!-- body-class:alt -->
 <p>Broken Access Control</p></div>
-    <div data-body-class=''><p>Any situation where a user can access something that is outside their intended access</p></div>
-    <div data-body-class=''><p>Manipulating URLs, cookies or tokens</p></div>
-    <div data-body-class=''><p>Missing access controls on unexpected HTTP methods or routes</p></div>
-    <div data-body-class=''><pre><code>/api/getCustomerInformation?id=123129112
+    <div data-body-class='' data-body-style=''><p>Any situation where a user can access something that is outside their intended permissions</p></div>
+    <div data-body-class='' data-body-style=''><p>Manipulating URLs, cookies or tokens</p></div>
+    <div data-body-class='' data-body-style=''><p>Missing access controls on unexpected HTTP methods or routes</p></div>
+    <div data-body-class='' data-body-style=''><pre><code>/api/getCustomerInformation?id=123129112
 </code></pre></div>
-    <div data-body-class=''><p><img src="https://media.brntn.me/postie/0fac4c83.jpeg" alt="" /></p></div>
-    <div data-body-class='alt'><!-- body-class:alt -->
+
+<div data-body-style="background-color: #f8f9fa;">
+	<img src="https://media.brntn.me/postie/c1ed47c2.png" alt="Optus logo" />
+</div>
+    <div data-body-class='alt' data-body-style=''><!-- body-class:alt -->
 <p>Cryptographic Failures</p></div>
-    <div data-body-class=''><p>Bad cryptography that can lead to unexpected data exposure</p></div>
-    <div data-body-class=''><p>Weak SSL / TLS configurations that allow person in the middle attacks</p>
+    <div data-body-class='' data-body-style=''><p>Bad cryptography that can lead to unexpected data exposure</p></div>
+    <div data-body-class='' data-body-style=''><p>Weak SSL / TLS configurations that allow person in the middle attacks</p>
 <div class="footnote">
     Use Mozilla's <a href="https://ssl-config.mozilla.org/">SSL Config Generator</a> and Qualys' <a href="https://www.ssllabs.com/ssltest/">SSL Labs Server Test</a>.
 </div></div>
-    <div data-body-class=''><p>Missing HTTP Strict Transport Security headers that allow HTTP downgrade attacks</p>
+    <div data-body-class='' data-body-style=''><p>Missing HTTP Strict Transport Security headers that allow HTTP downgrade attacks</p>
 <div class="footnote">
     <a href="https://securityheaders.io">SecurityHeaders.io</a> has tests for this and a bunch of others.
 </div></div>
-    <div data-body-class=''><p>The use of default passwords or secrets in applications</p></div>
-    <div data-body-class=''><p><img src="https://media.brntn.me/postie/8c690dc2.png" alt="" /></p>
-<!-- source: https://www.bleepingcomputer.com/news/security/hacker-steals-military-docs-because-someone-didn-t-change-a-default-ftp-password/ --></div>
-    <div data-body-class=''><p>Default credentials are really <a href="https://github.com/ihebski/DefaultCreds-cheat-sheet/blob/main/README.md">easy</a> <a href="https://github.com/ihebski/DefaultCreds-cheat-sheet/blob/main/README.md">to</a> <a href="https://github.com/danielmiessler/SecLists/tree/master/Passwords/Default-Credentials">come</a> <a href="https://github.com/ztgrace/changeme/blob/master/README.md">by...</a></p></div>
-    <div data-body-class='alt'><!-- body-class:alt -->
+    <div data-body-class='' data-body-style=''><p>The use of default passwords or secrets in applications</p>
+<div class="footnote">
+    Default credentials are really <a href="https://github.com/ihebski/DefaultCreds-cheat-sheet/blob/main/README.md">easy</a> <a href="https://github.com/ihebski/DefaultCreds-cheat-sheet/blob/main/README.md">to</a> <a href="https://github.com/danielmiessler/SecLists/tree/master/Passwords/Default-Credentials">come</a> <a href="https://github.com/ztgrace/changeme/blob/master/README.md">by...</a>
+</div></div>
+    <div data-body-class='' data-body-style=''><p>Keys using weak algorithms or low entropy</p>
+<p>Accidental key exposure</p></div>
+
+<div data-body-style="background-color: #22272e;">
+	<img src="https://media.brntn.me/postie/d03d1497.png" />
+</div>
+
+    <div data-body-class='alt' data-body-style=''><!-- body-class:alt -->
 <p>Injection</p></div>
-    <div data-body-class=''><p>Situations where user supplied data is directly injected into your code</p></div>
-    <div data-body-class=''><p>Not just SQL!</p>
+    <div data-body-class='' data-body-style=''><p>Situations where user supplied data is directly injected into your code</p></div>
+    <div data-body-class='' data-body-style=''><p>Not just SQL!</p>
 <p>LDAP, NoSQL, system commands, and ORMs are all targets.</p></div>
-    <div data-body-class=''><p><img src="https://media.brntn.me/postie/089015a8.png" alt="" /></p></div>
-    <div data-body-class='alt'><!-- body-class:alt -->
+
+<div>
+	<img src="https://imgs.xkcd.com/comics/exploits_of_a_mom.png">
+	<div class="footnote">
+		CC-BY-NC: https://xkcd.com/327/, "Exploits of a Mom"
+	</div>
+</div>
+    <div data-body-class='alt' data-body-style=''><!-- body-class:alt -->
 <p>Insecure Design</p></div>
-    <div data-body-class='alt'><!-- body-class:alt -->
+    <div data-body-class='' data-body-style=''><p>Design and architectural flaws in your system</p></div>
+    <div data-body-class='' data-body-style=''><p>Promotes secure by design and ensures teams understand the security implications of changes</p></div>
+
+<div>
+	<img src="https://media.brntn.me/postie/fee937f4.png" />
+</div>
+    <div data-body-class='alt' data-body-style=''><!-- body-class:alt -->
 <p>Security Misconfiguration</p></div>
-    <div data-body-class='alt'><!-- body-class:alt -->
+    <div data-body-class='' data-body-style=''><p>Applications that are improperly secured because of a misconfiguration</p></div>
+    <div data-body-class='' data-body-style=''><p>Missed steps in go live or hardening documentation</p></div>
+    <div data-body-class='' data-body-style=''><p>Applications deployed to production with development configurations</p></div>
+    <div data-body-class='' data-body-style=''><p>Features enabled that aren't being used increasing the attack surface area</p></div>
+
+<div>
+	<img src="https://media.brntn.me/postie/5f897134.png">
+</div>
+    <div data-body-class='alt' data-body-style=''><!-- body-class:alt -->
 <p>Vulnerable and Outdated Components</p></div>
-    <div data-body-class='alt'><!-- body-class:alt -->
+    <div data-body-class='' data-body-style=''><p>Applications using components with known security vulnerabilities</p></div>
+    <div data-body-class='' data-body-style=''><p>Both accidental vulnerabilities and malicious changes apply here</p></div>
+    <div data-body-class='' data-body-style=''><p>Supply chain attacks</p></div>
+
+<div data-body-style="background-color:#fff;">
+	<img src="https://media.brntn.me/postie/aa4b3202.png" />
+</div>
+    <div data-body-class='alt' data-body-style=''><!-- body-class:alt -->
 <p>Identification and Authentication Failures</p></div>
-    <div data-body-class='alt'><!-- body-class:alt -->
+    <div data-body-class='' data-body-style=''><p>Allowing the wrong user (malicious or not) to authenticate to a system</p></div>
+    <div data-body-class='' data-body-style=''><p>Account enumeration, especially when weak and previously leaked passwords are allowed</p></div>
+    <div data-body-class='' data-body-style=''><p>Misconfiguration of authentication that allows MFA bypass, OAuth scope creep, unverified user registrations, etc..</p></div>
+
+<div>
+	<img src="https://media.brntn.me/postie/c52fbfb0.png" />
+</div>
+    <div data-body-class='alt' data-body-style=''><!-- body-class:alt -->
 <p>Software and Data Integrity Failures</p></div>
-    <div data-body-class='alt'><!-- body-class:alt -->
+    <div data-body-class='' data-body-style=''><p>Assuming that the build you just tested is the one that will be deployed</p></div>
+    <div data-body-class='' data-body-style=''><p>Using dependencies from third parties without verifying them</p></div>
+    <div data-body-class='' data-body-style=''><p>Allowing untrusted code into your ecosystem</p></div>
+
+<div data-body-style="background-color:#fff;">
+	<img src="https://media.brntn.me/postie/0891c86a.png" />
+</div>
+    <div data-body-class='alt' data-body-style=''><!-- body-class:alt -->
 <p>Security Logging and Monitoring Failures</p></div>
-    <div data-body-class='alt'><!-- body-class:alt -->
+    <div data-body-class='' data-body-style=''><p>Not having enough information to investigate an issue</p></div>
+    <div data-body-class='' data-body-style=''><p>Logging so much information that it becomes toxic waste</p>
+<div class="footnote">
+    <a href="https://idlewords.com/talks/haunted_by_data.htm">Haunted By Data</a>
+</div></div>
+
+<div data-body-style="background-color:#fff;">
+	<img src="https://media.brntn.me/postie/ea9c46fb.png">
+</div>
+    <div data-body-class='alt' data-body-style=''><!-- body-class:alt -->
 <p>Server-Side Request Forgery</p></div>
-    <div data-body-class=''><style>
+    <div data-body-class='' data-body-style=''><p>Allowing your server to make requests to a resource provided by a user</p></div>
+    <div data-body-class='' data-body-style=''><p>Making requests that reveal metadata about the service</p></div>
+    <div data-body-class='' data-body-style=''><p>Tricking servers into mining cryptocurrencies</p></div>
+    <div data-body-class='' data-body-style=''><pre><code class="language-bash">http://google.com:80+&amp;@127.88.23.245:22/#+@google.com:80/
+</code></pre>
+<div class="footnote">
+    Source: <a href="https://github.com/cujanovic/SSRF-Testing">SSRF-Testing</a> on Github
+</div></div>
+    <div data-body-class='' data-body-style=''><pre><code class="language-bash">http://0/
+</code></pre></div>
+
+<div data-body-style="background-color:#fff;">
+	<img src="https://media.brntn.me/postie/82787881.png">
+</div>
+    <div data-body-class='' data-body-style=''><p>Wrap Up</p></div>
+    <div data-body-class='' data-body-style=''><p>The OWASP Top 10 is a great guide, but is really only the first 10 of 100s of potential issues</p></div>
+    <div data-body-class='' data-body-style=''><p>Think about security early, during the planning and design phase of new work</p></div>
+    <div data-body-class='' data-body-style=''><p>Resources if you want to learn more</p>
+<ul>
+<li><a href="https://owasp.org/">OWASP</a> (<a href="https://owasp.org/www-project-top-ten/">Top 10</a>, <a href="https://cheatsheetseries.owasp.org/">Cheat Sheet Series</a>, )</li>
+<li>Pentester Labs Bootcamp</li>
+<li>PicoCTF</li>
+<li>Learn to Hack</li>
+<li>Risky Business</li>
+</ul></div>
+    <div data-body-class='' data-body-style=''><p>Exposure links</p>
+<ul>
+<li><a href="https://verse.systems/blog/post/2022-09-25-optus-breach/">Optus breach details</a></li>
+<li><a href="https://github.blog/2023-03-23-we-updated-our-rsa-ssh-host-key/">Github RSA key leak</a></li>
+<li><a href="https://xkcd.com/327/">Exploits of a Mom</a></li>
+<li><a href="https://en.wikipedia.org/wiki/LastPass#Security_incidents">Lastpass Security Incidents</a></li>
+<li><a href="https://krebsonsecurity.com/2023/04/many-public-salesforce-sites-are-leaking-private-data/">Salesforce public sites</a></li>
+<li><a href="https://www.theregister.com/2022/03/18/protestware_javascript_node_ipc/">node-ipc updated to support Ukraine</a></li>
+<li><a href="https://haveibeenpwned.com">Have I Been Pwned?</a></li>
+<li><a href="https://www.wired.com/story/russia-solarwinds-hack-roundup/">Solarwinds</a> (<a href="https://archive.md/3RizK">non-paywalled link</a>)</li>
+<li><a href="https://ia.acs.org.au/article/2023/latitude-breach-just-got-much-worse.html">Latitude breach just got much worse</a></li>
+<li><a href="http://blog.orange.tw/2017/07/how-i-chained-4-vulnerabilities-on.html">Github SSRF Exploit Chain</a></li>
+</ul>
+<style>
 body {
   background-color: #ffd52e;
   color: #000;
