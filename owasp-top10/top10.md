@@ -130,9 +130,6 @@ LDAP, NoSQL, system commands, and ORMs are all targets.
 
 <div>
 	<img src="https://imgs.xkcd.com/comics/exploits_of_a_mom.png">
-	<div class="footnote">
-		CC-BY-NC: https://xkcd.com/327/, "Exploits of a Mom"
-	</div>
 </div>
 
 ---

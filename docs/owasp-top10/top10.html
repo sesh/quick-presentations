@@ -1447,18 +1447,21 @@ addEventListener("load", () => {
     sc.style.height = `${height}px`;
     slideDiv.style.padding = `${padding}px`;
     if (getComputedStyle(slideDiv).display === "grid") slideDiv.style.height = `${height - padding * 2}px`;
-    for (let step of [100, 50, 10, 2]) {
-      for (; fontSize > 0; fontSize -= step) {
-        slideDiv.style.fontSize = `${fontSize}px`;
-        if (
-          slideDiv.scrollWidth <= width &&
-          slideDiv.offsetHeight <= height &&
-          Array.from(slideDiv.querySelectorAll("div")).every(elem => elem.scrollWidth <= elem.clientWidth && elem.scrollHeight <= elem.clientHeight)
-        ) {
-          break;
+    
+    if (!(slideDiv.children.length == 1 && slideDiv.children[0].tagName == "IMG")) {
+      for (let step of [100, 50, 10, 2]) {
+        for (; fontSize > 0; fontSize -= step) {
+          slideDiv.style.fontSize = `${fontSize}px`;
+          if (
+            slideDiv.scrollWidth <= width &&
+            slideDiv.offsetHeight <= height &&
+            Array.from(slideDiv.querySelectorAll("div")).every(elem => elem.scrollWidth <= elem.clientWidth && elem.scrollHeight <= elem.clientHeight)
+          ) {
+            break;
+          }
         }
+        fontSize += step;
       }
-      fontSize += step;
     }
   }
 
@@ -1663,9 +1666,6 @@ addEventListener("load", () => {
 
 <div>
 	<img src="https://imgs.xkcd.com/comics/exploits_of_a_mom.png">
-	<div class="footnote">
-		CC-BY-NC: https://xkcd.com/327/, "Exploits of a Mom"
-	</div>
 </div>
     <div data-body-class='alt' data-body-style=''><!-- body-class:alt -->
 <p>Insecure Design</p></div>
