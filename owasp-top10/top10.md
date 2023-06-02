@@ -355,6 +355,10 @@ Exposure links
 - [Latitude breach just got much worse](https://ia.acs.org.au/article/2023/latitude-breach-just-got-much-worse.html)
 - [Github SSRF Exploit Chain](http://blog.orange.tw/2017/07/how-i-chained-4-vulnerabilities-on.html)
 
+---
+
+🙏🏻 Thanks!
+
 <style>
 body {
   background-color: #ffd52e;
