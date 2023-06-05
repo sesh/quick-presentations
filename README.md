@@ -34,6 +34,8 @@ Processed examples:
 - [Lighting TDD Introduction](https://sesh.github.io/quick-presentations/tdd-general.html)
 - [Estimation Challenge](https://sesh.github.io/quick-presentations/pragprog-challenges.html)
 
+The `docs` folder is generated locally (i.e. not with Github Actions) and deployed with Github Pages.
+
 ---
 
 Licence
