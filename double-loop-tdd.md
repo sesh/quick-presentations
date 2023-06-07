@@ -1,7 +1,7 @@
 Coding Practice
 
 <div class="footnote">
-	(I'll be back in a couple of minutes)
+	(We'll kick off in a couple of minutes)
 </div>
 
 ---
