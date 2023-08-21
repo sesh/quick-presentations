@@ -267,7 +267,7 @@ Not having enough information to investigate an issue
 Logging so much information that it becomes toxic waste
 
 <div class="footnote">
-	<a href="https://idlewords.com/talks/haunted_by_data.htm">Haunted By Data</a>
+	<a href="https://idlewords.com/talks/haunted_by_data.htm">Haunted By Data</a> at Idle Words, <a href="https://www.schneier.com/blog/archives/2016/03/data_is_a_toxic.html">Data is a Toxic Asset</a> by Bruce Schneier.
 </div>
 
 ---
