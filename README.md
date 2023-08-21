@@ -38,6 +38,14 @@ The `docs` folder is generated locally (i.e. not with Github Actions) and deploy
 
 ---
 
+The `screenshots.py` script is a simple utility to generate screenshots from a hosted presentation:
+
+```
+python3 screenshots.py http://localhost:8000/top10.html --num-slides=62
+```
+
+---
+
 Licence
 
 - Code: MIT
