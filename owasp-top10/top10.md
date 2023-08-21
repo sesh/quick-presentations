@@ -10,7 +10,7 @@ A regularly updated list of the *most critical* security risks to web applicatio
 
 ---
 
-Open Web Application Security Project (OWASP) is a community-led security project.
+Open Worldwide Application Security Project (OWASP) is a community-led security project.
 
 The team is made up of security experts from around the world.
 
