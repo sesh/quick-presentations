@@ -46,7 +46,7 @@ The overhead of storing data is roughly equal to the overhead of sending it over
 
 <style>
 body {
-	background-color: #ffd52e;
+	background-color: #7BD3EA;
 	color: #000;
 }
 </style>

@@ -1447,18 +1447,21 @@ addEventListener("load", () => {
     sc.style.height = `${height}px`;
     slideDiv.style.padding = `${padding}px`;
     if (getComputedStyle(slideDiv).display === "grid") slideDiv.style.height = `${height - padding * 2}px`;
-    for (let step of [100, 50, 10, 2]) {
-      for (; fontSize > 0; fontSize -= step) {
-        slideDiv.style.fontSize = `${fontSize}px`;
-        if (
-          slideDiv.scrollWidth <= width &&
-          slideDiv.offsetHeight <= height &&
-          Array.from(slideDiv.querySelectorAll("div")).every(elem => elem.scrollWidth <= elem.clientWidth && elem.scrollHeight <= elem.clientHeight)
-        ) {
-          break;
+    
+    if (!(slideDiv.children.length == 1 && slideDiv.children[0].tagName == "IMG")) {
+      for (let step of [100, 50, 10, 2]) {
+        for (; fontSize > 0; fontSize -= step) {
+          slideDiv.style.fontSize = `${fontSize}px`;
+          if (
+            slideDiv.scrollWidth <= width &&
+            slideDiv.offsetHeight <= height &&
+            Array.from(slideDiv.querySelectorAll("div")).every(elem => elem.scrollWidth <= elem.clientWidth && elem.scrollHeight <= elem.clientHeight)
+          ) {
+            break;
+          }
         }
+        fontSize += step;
       }
-      fontSize += step;
     }
   }
 
@@ -1599,74 +1602,74 @@ addEventListener("load", () => {
 		</style>
 	</head>
 	<body>
-	    <div><h1>Test Driven Development</h1></div>
-    <div><ul>
+	    <div data-body-class='' data-body-style=''><h1>Test Driven Development</h1></div>
+    <div data-body-class='' data-body-style=''><ul>
 <li>I'll introduce TDD and some of its guidelines</li>
 <li>We will run through a quick example together</li>
 <li>Complete a TDD Kata in pairs</li>
 <li>We'll have a quick chat about TDD</li>
 </ul></div>
-    <div><p>So, what is TDD?</p></div>
-    <div><blockquote>
+    <div data-body-class='' data-body-style=''><p>So, what is TDD?</p></div>
+    <div data-body-class='' data-body-style=''><blockquote>
 <p>Test-Driven Development (TDD) is a technique for building software that guides software development by writing tests</p>
 </blockquote>
 <p><em>- Martin Fowler</em></p>
 <div class="footnote">
   https://martinfowler.com/bliki/TestDrivenDevelopment.html
 </div></div>
-    <div><ol>
+    <div data-body-class='' data-body-style=''><ol>
 <li>Write a failing test</li>
 <li>Write code to make it pass</li>
 <li>Refactor to ensure clean code</li>
 </ol></div>
-    <div><p>🔴💚🔁</p></div>
-    <div><p>Refactor both your code and tests</p></div>
-    <div><p>Rules, you say?</p></div>
-    <div><blockquote>
+    <div data-body-class='' data-body-style=''><p>🔴💚🔁</p></div>
+    <div data-body-class='' data-body-style=''><p>Refactor both your code and tests</p></div>
+    <div data-body-class='' data-body-style=''><p>Rules, you say?</p></div>
+    <div data-body-class='' data-body-style=''><blockquote>
 <h2>The Three Laws of TDD</h2>
 </blockquote>
 <p><em>- Robert Martin</em></p>
 <div class="footnote">
   http://www.butunclebob.com/ArticleS.UncleBob.TheThreeRulesOfTdd
 </div></div>
-    <div><ol>
+    <div data-body-class='' data-body-style=''><ol>
 <li>You are not allowed to write any production code unless it is to make a failing unit test pass.</li>
 </ol></div>
-    <div><ol start="2">
+    <div data-body-class='' data-body-style=''><ol start="2">
 <li>You are not allowed to write any more of a unit test than is sufficient to fail; and compilation failures are failures.</li>
 </ol></div>
-    <div><ol start="3">
+    <div data-body-class='' data-body-style=''><ol start="3">
 <li>You are not allowed to write any more production code than is sufficient to pass the one failing unit test.</li>
 </ol></div>
-    <div><p>Generalisation</p></div>
-    <div><p>Avoid writing code for the &quot;general&quot; case when you don't have to</p></div>
-    <div><pre><code class="language-javascript">describe('isPrime', () =&gt; {
+    <div data-body-class='' data-body-style=''><p>Generalisation</p></div>
+    <div data-body-class='' data-body-style=''><p>Avoid writing code for the &quot;general&quot; case when you don't have to</p></div>
+    <div data-body-class='' data-body-style=''><pre><code class="language-javascript">describe('isPrime', () =&gt; {
   it('should be prime', () =&gt; {
     expect(isPrime(3)).toBe(true);
   });
 });
 </code></pre></div>
-    <div><pre><code class="language-javascript">const isPrime = (n) =&gt; {
+    <div data-body-class='' data-body-style=''><pre><code class="language-javascript">const isPrime = (n) =&gt; {
   return n == 3;
 };
 </code></pre></div>
-    <div><p>Triangulation</p></div>
-    <div><p>Use a second assertion to drive a safer creation of the generic version</p>
+    <div data-body-class='' data-body-style=''><p>Triangulation</p></div>
+    <div data-body-class='' data-body-style=''><p>Use a second assertion to drive a safer creation of the generic version</p>
 <div class="footnote">
   https://dmitripavlutin.com/triangulation-test-driven-development/
 </div></div>
-    <div><p><img src="https://media.brntn.me/postie/e3dbd8f4.png" alt="" /></p>
+    <div data-body-class='' data-body-style=''><p><img src="https://media.brntn.me/postie/e3dbd8f4.png" alt="" /></p>
 <div class="footnote">
   Image: CC-BY (Brenton Cleeland)
 </div></div>
-    <div><pre><code class="language-javascript">describe('isPrime', () =&gt; {
+    <div data-body-class='' data-body-style=''><pre><code class="language-javascript">describe('isPrime', () =&gt; {
   it('should return true when prime', () =&gt; {
     expect(isPrime(3)).toBe(true);
     expect(isPrime(7)).toBe(true);
   });
 });
 </code></pre></div>
-    <div><pre><code class="language-javascript">const isPrime = (n) =&gt; {
+    <div data-body-class='' data-body-style=''><pre><code class="language-javascript">const isPrime = (n) =&gt; {
   for (let i = 2; i &lt;= n/2; i++) {
     if (n % i === 0) {
       return;
@@ -1675,8 +1678,8 @@ addEventListener("load", () => {
   return true;
 };
 </code></pre></div>
-    <div><p>Refactor</p></div>
-    <div><pre><code class="language-javascript">const isPrime = (n) =&gt; {
+    <div data-body-class='' data-body-style=''><p>Refactor</p></div>
+    <div data-body-class='' data-body-style=''><pre><code class="language-javascript">const isPrime = (n) =&gt; {
   let max = Math.sqrt(n);
   for (let i = 2; i &lt;= max; i++) {
     if (n % i === 0) {
@@ -1686,14 +1689,14 @@ addEventListener("load", () => {
   return true;
 };
 </code></pre></div>
-    <div><p>Once you're happy with the code, think about and test negative cases</p></div>
-    <div><pre><code class="language-javascript">describe('isPrime', () =&gt; {
+    <div data-body-class='' data-body-style=''><p>Once you're happy with the code, think about and test negative cases</p></div>
+    <div data-body-class='' data-body-style=''><pre><code class="language-javascript">describe('isPrime', () =&gt; {
   it('should return false when not prime', () =&gt; {
     expect(isPrime(22)).toBe(false);
   });
 });
 </code></pre></div>
-    <div><pre><code class="language-javascript">const isPrime = (n) =&gt; {
+    <div data-body-class='' data-body-style=''><pre><code class="language-javascript">const isPrime = (n) =&gt; {
   let max = Math.sqrt(n);
   for (let i = 2; i &lt;= max; i++) {
     if (n % i === 0) {
@@ -1703,14 +1706,14 @@ addEventListener("load", () => {
   return true;
 };
 </code></pre></div>
-    <div><p>Think about the edge cases</p></div>
-    <div><pre><code class="language-javascript">describe('isPrime', () =&gt; {
+    <div data-body-class='' data-body-style=''><p>Think about the edge cases</p></div>
+    <div data-body-class='' data-body-style=''><pre><code class="language-javascript">describe('isPrime', () =&gt; {
   it('should return false when passed one', () =&gt; {
     expect(isPrime(1)).toBe(false);
   });
 });
 </code></pre></div>
-    <div><pre><code class="language-javascript">const isPrime = (n) =&gt; {
+    <div data-body-class='' data-body-style=''><pre><code class="language-javascript">const isPrime = (n) =&gt; {
   let max = Math.sqrt(n);
   for (let i = 2; i &lt;= max; i++) {
     if (n % i === 0) {
@@ -1723,21 +1726,21 @@ addEventListener("load", () => {
 <div class="footnote">
   https://stackoverflow.com/a/40200710
 </div></div>
-    <div><p>Awesome-sauce 🍅</p></div>
-    <div><p>Let's recap</p></div>
-    <div><ul>
+    <div data-body-class='' data-body-style=''><p>Awesome-sauce 🍅</p></div>
+    <div data-body-class='' data-body-style=''><p>Let's recap</p></div>
+    <div data-body-class='' data-body-style=''><ul>
 <li>Write a test</li>
 <li>Write code</li>
 <li>Refactor to make things 👍🏻</li>
 </ul></div>
-    <div><p>Only write the code required to make your test pass</p></div>
-    <div><p>Think about edge cases</p></div>
-    <div><p>TDD is a discipline and takes practice</p></div>
-    <div><p>Try using TDD on your next side project</p></div>
-    <div><p>Thank you 🙏🏻</p>
+    <div data-body-class='' data-body-style=''><p>Only write the code required to make your test pass</p></div>
+    <div data-body-class='' data-body-style=''><p>Think about edge cases</p></div>
+    <div data-body-class='' data-body-style=''><p>TDD is a discipline and takes practice</p></div>
+    <div data-body-class='' data-body-style=''><p>Try using TDD on your next side project</p></div>
+    <div data-body-class='' data-body-style=''><p>Thank you 🙏🏻</p>
 <style>
 body {
-  background-color: #ffd52e;
+  background-color: #7BD3EA;
   color: #000;
 }
 </style></div>

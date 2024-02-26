@@ -245,7 +245,7 @@ Thank you 🙏🏻
 
 <style>
 body {
-  background-color: #ffd52e;
+  background-color: #7BD3EA;
   color: #000;
 }
 </style>

@@ -1447,18 +1447,21 @@ addEventListener("load", () => {
     sc.style.height = `${height}px`;
     slideDiv.style.padding = `${padding}px`;
     if (getComputedStyle(slideDiv).display === "grid") slideDiv.style.height = `${height - padding * 2}px`;
-    for (let step of [100, 50, 10, 2]) {
-      for (; fontSize > 0; fontSize -= step) {
-        slideDiv.style.fontSize = `${fontSize}px`;
-        if (
-          slideDiv.scrollWidth <= width &&
-          slideDiv.offsetHeight <= height &&
-          Array.from(slideDiv.querySelectorAll("div")).every(elem => elem.scrollWidth <= elem.clientWidth && elem.scrollHeight <= elem.clientHeight)
-        ) {
-          break;
+    
+    if (!(slideDiv.children.length == 1 && slideDiv.children[0].tagName == "IMG")) {
+      for (let step of [100, 50, 10, 2]) {
+        for (; fontSize > 0; fontSize -= step) {
+          slideDiv.style.fontSize = `${fontSize}px`;
+          if (
+            slideDiv.scrollWidth <= width &&
+            slideDiv.offsetHeight <= height &&
+            Array.from(slideDiv.querySelectorAll("div")).every(elem => elem.scrollWidth <= elem.clientWidth && elem.scrollHeight <= elem.clientHeight)
+          ) {
+            break;
+          }
         }
+        fontSize += step;
       }
-      fontSize += step;
     }
   }
 
@@ -1599,14 +1602,14 @@ addEventListener("load", () => {
 		</style>
 	</head>
 	<body>
-	    <div><p>Build quick presentations from markdown files.</p></div>
-    <div><p>Usage:</p>
+	    <div data-body-class='' data-body-style=''><p>Build quick presentations from markdown files.</p></div>
+    <div data-body-class='' data-body-style=''><p>Usage:</p>
 <pre><code>pipenv run python bbig.py &lt;markdown-file&gt;
 </code></pre>
 <p>Build all markdown files with:</p>
 <pre><code>pipenv run python bbig.py *.md
 </code></pre></div>
-    <div><p>Under the hood this really just combines a bunch of bigger utilities:</p>
+    <div data-body-class='' data-body-style=''><p>Under the hood this really just combines a bunch of bigger utilities:</p>
 <ul>
 <li><a href="https://github.com/tmcw/big/">big</a> to power the presentation</li>
 <li><a href="https://mistune.lepture.com/en/latest/">mistune</a> for Markdown parsing</li>
@@ -1614,14 +1617,19 @@ addEventListener("load", () => {
 <li><a href="https://twemoji.twitter.com/">Twemoji</a> to ensure emoji are consistent and scalable</li>
 <li><a href="https://github.com/sesh/thttp">thttp</a> as a lightweight HTTP client</li>
 </ul></div>
-    <div><p>The Markdown files in this repository are presentations.</p>
+    <div data-body-class='' data-body-style=''><p>The Markdown files in this repository are presentations.</p>
 <p>Processed examples:</p>
 <ul>
 <li><a href="https://sesh.github.io/quick-presentations/README.html">This README</a></li>
 <li><a href="https://sesh.github.io/quick-presentations/tdd-general.html">Lighting TDD Introduction</a></li>
 <li><a href="https://sesh.github.io/quick-presentations/pragprog-challenges.html">Estimation Challenge</a></li>
-</ul></div>
-    <div><p>Licence</p>
+<li><a href="https://sesh.github.io/quick-presentations/owasp-top10/top10.html">OWASP Top 10</a></li>
+</ul>
+<p>The <code>docs</code> folder is generated locally (i.e. not with Github Actions) and deployed with Github Pages.</p></div>
+    <div data-body-class='' data-body-style=''><p>The <code>screenshots.py</code> script is a simple utility to generate screenshots from a hosted presentation:</p>
+<pre><code>python3 screenshots.py http://localhost:8000/top10.html --num-slides=62
+</code></pre></div>
+    <div data-body-class='' data-body-style=''><p>Licence</p>
 <ul>
 <li>Code: MIT</li>
 <li>Presentations: CC-BY-SA</li>

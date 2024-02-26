@@ -1447,18 +1447,21 @@ addEventListener("load", () => {
     sc.style.height = `${height}px`;
     slideDiv.style.padding = `${padding}px`;
     if (getComputedStyle(slideDiv).display === "grid") slideDiv.style.height = `${height - padding * 2}px`;
-    for (let step of [100, 50, 10, 2]) {
-      for (; fontSize > 0; fontSize -= step) {
-        slideDiv.style.fontSize = `${fontSize}px`;
-        if (
-          slideDiv.scrollWidth <= width &&
-          slideDiv.offsetHeight <= height &&
-          Array.from(slideDiv.querySelectorAll("div")).every(elem => elem.scrollWidth <= elem.clientWidth && elem.scrollHeight <= elem.clientHeight)
-        ) {
-          break;
+    
+    if (!(slideDiv.children.length == 1 && slideDiv.children[0].tagName == "IMG")) {
+      for (let step of [100, 50, 10, 2]) {
+        for (; fontSize > 0; fontSize -= step) {
+          slideDiv.style.fontSize = `${fontSize}px`;
+          if (
+            slideDiv.scrollWidth <= width &&
+            slideDiv.offsetHeight <= height &&
+            Array.from(slideDiv.querySelectorAll("div")).every(elem => elem.scrollWidth <= elem.clientWidth && elem.scrollHeight <= elem.clientHeight)
+          ) {
+            break;
+          }
         }
+        fontSize += step;
       }
-      fontSize += step;
     }
   }
 
@@ -1599,19 +1602,19 @@ addEventListener("load", () => {
 		</style>
 	</head>
 	<body>
-	    <div><h1>Challenge!</h1></div>
-    <div><p>You are asked &quot;which has the higher bandwidth: a 1 Gbps network connection, or a person walking between two computers with a full 1TB of storage device in their pocket?&quot;<br><br><br></p>
+	    <div data-body-class='' data-body-style=''><h1>Challenge!</h1></div>
+    <div data-body-class='' data-body-style=''><p>You are asked &quot;which has the higher bandwidth: a 1 Gbps network connection, or a person walking between two computers with a full 1TB of storage device in their pocket?&quot;<br><br><br></p>
 <p>What constraints will you put on your answer to ensure that the scope of your response is correct?</p>
 <div class="footnote">
     Source: Page 71 of <a href="https://pragprog.com/titles/tpp20/the-pragmatic-programmer-20th-anniversary-edition/">The Pragmatic Programmer (20th Anniversary Edition)</a>
 </div></div>
-    <div><p>So, which has the higher bandwidth?</p></div>
-    <div><p>The storage device contains the information we need to be transferred</p></div>
-    <div><p>We know the speed at which the person walks</p></div>
-    <div><p>We know the distance between the machines</p></div>
-    <div><p>We are not accounting for the time it takes to transfer information to and from the storage device</p></div>
-    <div><p>The overhead of storing data is roughly equal to the overhead of sending it over a communication line</p></div>
-    <div><blockquote>
+    <div data-body-class='' data-body-style=''><p>So, which has the higher bandwidth?</p></div>
+    <div data-body-class='' data-body-style=''><p>The storage device contains the information we need to be transferred</p></div>
+    <div data-body-class='' data-body-style=''><p>We know the speed at which the person walks</p></div>
+    <div data-body-class='' data-body-style=''><p>We know the distance between the machines</p></div>
+    <div data-body-class='' data-body-style=''><p>We are not accounting for the time it takes to transfer information to and from the storage device</p></div>
+    <div data-body-class='' data-body-style=''><p>The overhead of storing data is roughly equal to the overhead of sending it over a communication line</p></div>
+    <div data-body-class='' data-body-style=''><blockquote>
 <p>Never underestimate the bandwidth of a station wagon full of tapes hurtling down the highway.</p>
 </blockquote>
 <p>— Andrew S. Tanenbaum</p>
@@ -1620,7 +1623,7 @@ addEventListener("load", () => {
 </div>
 <style>
 body {
-    background-color: #ffd52e;
+    background-color: #7BD3EA;
     color: #000;
 }
 </style></div>
